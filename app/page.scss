@@ -1,0 +1,73 @@
+.text1,
+.text2,
+.star1,
+.star2 {
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+.text1 {
+  top: 4rem;
+  left: 1%;
+}
+.text2 {
+  bottom: 0rem;
+  right: 4rem;
+}
+.star1 img,
+.star2 img {
+  animation: rotation 3s infinite linear;
+  @media (max-width: 1100px) {
+    max-width: 50%;
+  }
+}
+.star1 {
+  bottom: 1rem;
+  left: 2rem;
+}
+.star2 {
+  top: 4rem;
+  right: 5%;
+}
+@keyframes rotation {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(359deg);
+  }
+}
+.custom-images {
+  img {
+    max-width: 20%;
+    animation: rotation 3s infinite linear;
+    height: auto;
+  }
+  .shaping-img img {
+    animation: none;
+    max-width: 75% !important;
+  }
+}
+
+@keyframes increaseHeight {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.letter-animate {
+  transition: transform 0.2s ease-out;
+}
+
+.letter-animate.hovered {
+  animation: increaseHeight 0.3s ease-out;
+  transform: translateY(
+    -5px
+  ); // Keep a slight lift while hovered after animation
+}
