@@ -36,21 +36,19 @@ const LinkButton = ({ text, href }: LinkButtonProps) => (
 export function AnimatedModalDemo() {
   return (
     <div className="py-20 flex items-center justify-center">
-      <Modal>
-        <ModalTrigger />
-
+      <ModalTrigger />
+      {/* <Modal>
         <ModalBody>
           <ModalContent className="flex flex-col justify-around items-center flex-1 p-8 md:p-10 text-3xl md:text-6xl">
             <LinkButton text="BUILDER" href="/devops" />
             <LinkButton text="PRODUCT MANAGER" href="/manager" />
             <LinkButton text="GROWTH HACKER" href="/developer" />
-            {/* <LinkButton text="FOUNDER" href="/founder" /> */}
           </ModalContent>
           <div
             className={"flex justify-end p-4 bg-gray-100 dark:bg-neutral-900"}
           ></div>
         </ModalBody>
-      </Modal>
+      </Modal> */}
     </div>
   );
 }

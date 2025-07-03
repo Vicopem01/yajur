@@ -10,6 +10,7 @@ import React, {
   useState,
 } from "react";
 import Button from "./Button";
+import { useRouter } from "next/navigation";
 
 interface ModalContextType {
   open: boolean;
@@ -41,8 +42,11 @@ export function Modal({ children }: { children: ReactNode }) {
 }
 
 export const ModalTrigger = () => {
-  const { setOpen } = useModal();
-  return <Button onClick={() => setOpen(true)}>Enter Portfolio</Button>;
+  // const { setOpen } = useModal();
+  const router = useRouter();
+  return (
+    <Button onClick={() => router.push("/portfolio")}>Enter Portfolio</Button>
+  );
 };
 
 export const ModalBody = ({

@@ -12,15 +12,7 @@ interface TimelineEntry {
   content: React.ReactNode;
 }
 
-export const Timeline = ({
-  data,
-  title,
-  desc,
-}: {
-  data: TimelineEntry[];
-  title: string;
-  desc: string;
-}) => {
+export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
   const ref = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const [height, setHeight] = useState(0);
@@ -45,9 +37,25 @@ export const Timeline = ({
       className="w-full bg-white dark:bg-neutral-950 font-sans md:px-10"
       ref={containerRef}
     >
-      <div className="py-20 px-4 md:px-8 lg:px-10">
-        <h2 className="text-5xl mb-4 text-white max-w-4xl">{title}</h2>
-        <p className="text-neutral-300 text-lg max-w-sm">{desc}</p>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 text-center py-10 mt-10">
+        <div>
+          <h2 className="text-6xl mb-4 text-white">Build</h2>
+          <p className="text-neutral-300 text-xl">
+            Started building solutions to real world problems
+          </p>
+        </div>
+        <div>
+          <h2 className="text-6xl mb-4 text-white">Grow</h2>
+          <p className="text-neutral-300 text-xl">
+            Started selling those solutions to real people.
+          </p>
+        </div>
+        <div>
+          <h2 className="text-6xl mb-4 text-white">Scale</h2>
+          <p className="text-neutral-300 text-xl">
+            Brought those solutions to the feet of millions
+          </p>
+        </div>
       </div>
 
       <div ref={ref} className="relative max-w-7xl mx-auto pb-20">
